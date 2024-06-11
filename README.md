@@ -1,6 +1,6 @@
-Installing With Kali:
+Installing With Linux:
 
-git clone https://github.com/yevgroup/reqstack/reqstack
+git clone https://github.com/yevgroup/reqstack
 cd reqstack
 python3 reqstack.py
 
