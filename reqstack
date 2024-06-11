@@ -1,0 +1,35 @@
+# this code owner is yev group
+# apache license
+# code made by rahmed(owner)
+
+import socket
+import time
+
+print("Welcome To ReqStack 1.0 From Yev Group")
+sa = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+ip = input("Ip Address:")
+port = int(input("Port:"))
+rn =  int(input("Request Number:"))
+
+sa.connect((ip, port))
+time.sleep(2)
+print(f"Connected To {port} Port ")
+print(f"Connected To {ip} Address")
+time.sleep(2)
+
+# repeat
+for i in range(rn):
+    requests = b'GET / HTTP/1.1\r\nHost: ' + ip.encode() + b'\r\n\r\n'
+    all_requests = requests * rn
+    sa.send(all_requests)
+# receive
+response = sa.recv(50).decode()
+status_line = response.split('\r\n')[0]
+status_code = status_line.split(' ')[1]
+print(f"HTTP: {status_code}")
+
+print(f"{rn} Stack Sent")
+
+sa.close()
+
+input("Press Enter to exit...")
