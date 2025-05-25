@@ -1,6 +1,6 @@
 Installing With Linux:
 
-git clone https://github.com/yevgroup/reqstack
+git clone https://github.com/rahmedi/reqstack
 
 cd reqstack
 
